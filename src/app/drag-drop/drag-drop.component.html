@@ -1,0 +1,55 @@
+<!-- <mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h3>Draggables</h3>
+        </mat-card-title>
+    </mat-card-header> -->
+<div cdkDropListGroup>
+    <!-- <div class="example-container"> -->
+    <mat-grid-list cols="4" rowHeight="8:1">
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>2</mat-grid-tile>
+        <mat-grid-tile>3</mat-grid-tile>
+        <mat-grid-tile>4</mat-grid-tile>
+        <mat-grid-tile>5</mat-grid-tile>
+        <mat-grid-tile>6</mat-grid-tile>
+        <mat-grid-tile>7</mat-grid-tile>
+        <mat-grid-tile>8</mat-grid-tile>
+        <mat-grid-tile>9</mat-grid-tile>
+        <mat-grid-tile>10</mat-grid-tile>
+        <mat-grid-tile>
+            <div cdkDropList (cdkDropListDropped)="drop($event)" class="example-box" cdkDrag> <span> 11</span></div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div cdkDropList (cdkDropListDropped)="drop($event)" class="example-box" cdkDrag><span>12</span></div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!-- </mat-card> -->
+
+    <!-- </div> -->
+</div>
+
+
+<br>
+
+<div cdkDropListGroup>
+    <div class="example-container">
+        <h2>List-A</h2>
+
+        <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                {{item}}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="example-container">
+        <h2>List-B</h2>
+
+        <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+
+</div>
