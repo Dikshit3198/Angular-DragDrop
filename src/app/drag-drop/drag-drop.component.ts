@@ -12,26 +12,28 @@ export class DragDropComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  list = []; list1 = []; list2 = []; list3 = []; list4 = []; list5 = []; list6 = []; list7 = []; list8 = [];
 
   todo = [
     'A',
     'B',
     'C',
     'D',
-    'E',
-    'F',
-    'G',
-    'H'
+    'E'
   ];
 
   done = [ 
+    'F',
+    'G',
+    'H',
+    'I',
+    'J'
   ];
-
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      // moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      return;
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       
     } else {
       transferArrayItem(event.previousContainer.data,
